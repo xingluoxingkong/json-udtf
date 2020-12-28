@@ -1,4 +1,4 @@
-package com.k9ly;
+﻿package com.k9ly;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -77,7 +77,7 @@ public class JsonUDTF extends GenericUDTF {
             if (parent.contains("[") && parent.contains("]")) {
                 String parentName = parent.substring(0, parent.indexOf("["));
                 List jsonList = (List) ((Map) jsonObject).get(parentName);
-                String index = parent.substring(parent.indexOf("[") + 1, parent.indexOf("]"));
+                String index = parent.substring(parent.indexOf("[") + 1, parent.indexOf("]")).trim();
                 if ("*".equals(index)) {
                     ArrayList<String> resList = new ArrayList<>();
                     for (Object obj : jsonList) {
